@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 import Input from "../../components/Input";
 import validateRegister from "../../validators/validate-register";
 import * as authApi from "../../apis/auth-api";
+import useLoading from "../../hooks/useLoading";
 
 const initialInput = {
   firstName: "",
@@ -11,9 +13,11 @@ const initialInput = {
   confirmPassword: "",
 };
 
-export default function RegisterForm() {
+export default function RegisterForm({ onClose }) {
   const [input, setInput] = useState(initialInput);
   const [error, setError] = useState({});
+
+  const { startLoading, stopLoading } = useLoading();
 
   const handleChangeInput = e => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -27,9 +31,17 @@ export default function RegisterForm() {
         setError(result);
       } else {
         setError({});
+        startLoading();
         await authApi.register(input);
+        setInput(initialInput);
+        onClose();
+        toast.success("success register. please log in to continey.");
       }
-    } catch (err) {}
+    } catch (err) {
+      toast.error(err.response?.data.message);
+    } finally {
+      stopLoading();
+    }
   };
 
   return (

@@ -15,7 +15,7 @@ export default function RegisterContainer() {
         Don't have an account? Get Started
       </button>
       <Modal open={open} onClose={() => setOpen(false)} title='Sign Up'>
-        <RegisterForm />
+        <RegisterForm onClose={() => setOpen(false)} />
       </Modal>
     </div>
   );
