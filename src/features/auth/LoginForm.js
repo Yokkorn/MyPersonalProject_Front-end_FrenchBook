@@ -24,7 +24,7 @@ export default function LoginForm() {
         <div className='w-3/4 mb-12'>
           <button
             type='submit'
-            className='py-4 bg-teal-300 hover:bg-teal-500 w-full text-white font-bold  border-b-2 border-teal-500 hover:border-teal-300 focus:ring-4 focus:ring-rose-300 rounded'
+            className='py-4 bg-teal-300 hover:bg-teal-500 w-full text-white font-bold  border-b-2 border-teal-500 hover:border-teal-300 focus:ring-4 focus:ring-teal-300 rounded'
           >
             LOGIN
           </button>
