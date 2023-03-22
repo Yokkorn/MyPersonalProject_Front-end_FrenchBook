@@ -9,7 +9,7 @@ export default function App() {
   return (
     <>
       {loading && <Spinner />}
-      <Router />;
+      <Router />
       <ToastContainer
         position='top-right'
         autoClose={3000}
