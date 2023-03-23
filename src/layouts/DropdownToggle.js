@@ -1,13 +1,13 @@
+import Avatar from "../components/Avatar";
+import useAuth from "../hooks/useAuth";
+
 export default function DropdownToggle() {
+  const {
+    authenticatedUser: { profileImage },
+  } = useAuth();
   return (
     <div>
-      <img
-        src='https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-        className='rounded-2xl cursor-pointer'
-        width='60'
-        height='60'
-        alt='user'
-      />
+      <Avatar src={profileImage} size='55' />
     </div>
   );
 }
