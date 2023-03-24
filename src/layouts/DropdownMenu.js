@@ -9,7 +9,7 @@ export default function DropdownMenu() {
       <li>
         <Link
           className='flex gap-2 w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal text-black hover:text-teal-500 active:text-teal-600 hover:bg-neutral-200'
-          to='/'
+          to={`/profile/${authenticatedUser.id}`}
           data-te-dropdown-item-ref
         >
           <Avatar src={authenticatedUser.profileImage} size='90' />

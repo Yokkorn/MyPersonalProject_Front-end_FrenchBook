@@ -4,7 +4,7 @@ import Menu from "./Menu";
 
 export default function Header() {
   return (
-    <nav className='navbar navbar-expand-sm bg-teal-50 shadow-md py-0 fixed-top'>
+    <nav className='navbar navbar-expand-sm bg-teal-300 shadow-lg py-0 fixed-top'>
       <div className=' mx-1 flex'>
         <div className='flex-1'>
           <Brand />
