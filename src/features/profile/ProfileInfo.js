@@ -25,7 +25,7 @@ export default function ProfileInfo({
             </span>
           )}
           <AvatarGroup
-            max='10'
+            max='8'
             data={profileFriends}
             size='36'
             borderColor='white'

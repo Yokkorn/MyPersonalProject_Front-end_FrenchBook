@@ -22,17 +22,23 @@ export default function ProfileContainer() {
     fetchProfileUser();
   }, [userId]);
 
-  // const updateProfileUser = value => {
-  //   setProfileUser({ ...profileUser, ...value });
-  // };
+  const updateProfileUser = value => {
+    setProfileUser({ ...profileUser, ...value });
+  };
 
   return (
     <div>
-      <ProfileCover coverImage={profileUser.coverImage} />
+      <ProfileCover
+        coverImage={profileUser.coverImage}
+        updateProfileUser={updateProfileUser}
+      />
       <ProfilePanel
         profileUser={profileUser}
         profileFriends={profileFriends}
         statusWithAuthUser={statusWithAuthUser}
+        updateProfileUser={updateProfileUser}
+        setProfileFriends={setProfileFriends}
+        setStatusWithAuthUser={setStatusWithAuthUser}
       />
     </div>
   );

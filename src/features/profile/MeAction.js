@@ -4,7 +4,7 @@ import { IconPen } from "../../icons";
 import CoverImageForm from "./CoverImageForm";
 import ProfileImageForm from "./ProfileImageForm";
 
-export default function MeAction() {
+export default function MeAction({ updateProfileUser }) {
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -16,9 +16,15 @@ export default function MeAction() {
         <span className='pt-1'>Edit Profile</span>
       </button>
       <Modal open={open} onClose={() => setOpen(false)} title='Edit'>
-        <ProfileImageForm />
+        <ProfileImageForm
+          onSuccess={() => setOpen(false)}
+          updateProfileUser={updateProfileUser}
+        />
         <hr className='mt-8' />
-        <CoverImageForm />
+        <CoverImageForm
+          onSuccess={() => setOpen(false)}
+          updateProfileUser={updateProfileUser}
+        />
       </Modal>
     </>
   );
