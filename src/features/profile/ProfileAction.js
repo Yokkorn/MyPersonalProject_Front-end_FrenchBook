@@ -1,6 +1,15 @@
-import { STATUS_FRIEND, STATUS_ME } from "../../config/constant";
-import FriendAction from "./FriendAction";
+import {
+  STATUS_ACCEPTER,
+  STATUS_FRIEND,
+  STATUS_ME,
+  STATUS_REQUESTER,
+  STATUS_UNKNOWN,
+} from "../../config/constant";
 import MeAction from "./MeAction";
+import FriendAction from "./FriendAction";
+import UnknownAction from "./UnknownAction";
+import AccepterAction from "./AccepterAction";
+import RequesterAction from "./RequesterAction";
 
 export default function ProfileAction({
   statusWithAuthUser,
@@ -18,6 +27,18 @@ export default function ProfileAction({
           setProfileFriends={setProfileFriends}
           setStatusWithAuthUser={setStatusWithAuthUser}
         />
+      )}
+      {statusWithAuthUser === STATUS_UNKNOWN && (
+        <UnknownAction setStatusWithAuthUser={setStatusWithAuthUser} />
+      )}
+      {statusWithAuthUser === STATUS_REQUESTER && (
+        <AccepterAction
+          setProfileFriends={setProfileFriends}
+          setStatusWithAuthUser={setStatusWithAuthUser}
+        />
+      )}
+      {statusWithAuthUser === STATUS_ACCEPTER && (
+        <RequesterAction setStatusWithAuthUser={setStatusWithAuthUser} />
       )}
     </div>
   );
