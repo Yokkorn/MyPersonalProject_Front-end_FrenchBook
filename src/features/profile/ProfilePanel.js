@@ -10,7 +10,7 @@ export default function ProfilePanel({
   setStatusWithAuthUser,
 }) {
   return (
-    <div className='mx-auto px-3 max-w-266 flex-col justify-center md:items-stretch space-x-4'>
+    <div className='relative mx-auto px-3 max-w-266 flex-col justify-center md:items-stretch space-x-4 z-10'>
       <ProfileInfo profileUser={profileUser} profileFriends={profileFriends} />
       <ProfileAction
         statusWithAuthUser={statusWithAuthUser}

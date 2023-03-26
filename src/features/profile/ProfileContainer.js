@@ -27,19 +27,21 @@ export default function ProfileContainer() {
   };
 
   return (
-    <div>
-      <ProfileCover
-        coverImage={profileUser.coverImage}
-        updateProfileUser={updateProfileUser}
-      />
-      <ProfilePanel
-        profileUser={profileUser}
-        profileFriends={profileFriends}
-        statusWithAuthUser={statusWithAuthUser}
-        updateProfileUser={updateProfileUser}
-        setProfileFriends={setProfileFriends}
-        setStatusWithAuthUser={setStatusWithAuthUser}
-      />
-    </div>
+    <>
+      <div>
+        <ProfileCover
+          coverImage={profileUser.coverImage}
+          updateProfileUser={updateProfileUser}
+        />
+        <ProfilePanel
+          profileUser={profileUser}
+          profileFriends={profileFriends}
+          statusWithAuthUser={statusWithAuthUser}
+          updateProfileUser={updateProfileUser}
+          setProfileFriends={setProfileFriends}
+          setStatusWithAuthUser={setStatusWithAuthUser}
+        />
+      </div>
+    </>
   );
 }
